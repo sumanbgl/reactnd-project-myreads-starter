@@ -26,25 +26,25 @@ class Search extends Component {
                 books: []
             }))
         } else {
-            BooksAPI.search(this.state.query)
-                .then((books) => {
-                    this.setState(() => ({
-                        books
-                    }))
-                })
+            // BooksAPI.search(this.state.query)
+            //     .then((books) => {
+            //         this.setState(() => ({
+            //             books
+            //         }))
+            //     })
             // .catch((books) => {
             //     this.setState(() => ({
             //         books: []
             //     }))
             // })
-            // BooksAPI.search(this.state.query)
-            //     .then((books) => {
-            //         books.filter((book) => book.hasOwnerProperty("imageLinks"))
-            //     }).then((books) => {
-            //         this.setState(() => ({
-            //             books
-            //         }))
-            //     })
+            BooksAPI.search(this.state.query)
+                .then((books) => {
+                    books.filter((book) => book.hasOwnerProperty("imageLinks"))
+                }).then((books) => {
+                    this.setState(() => ({
+                        books
+                    }))
+                })
         }
 
     }
