@@ -39,7 +39,7 @@ class Search extends Component {
             // })
             BooksAPI.search(this.state.query)
                 .then((books) => {
-                    books.filter((book) => book.hasOwnerProperty("imageLinks"))
+                    books.filter((book) => book.hasOwnProperty("imageLinks"))
                 }).then((books) => {
                     this.setState(() => ({
                         books
